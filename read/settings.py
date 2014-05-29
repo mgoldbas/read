@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'psycopg2',
 	'south',
 	'read',
 )
@@ -50,7 +51,6 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'read.urls'
-AUTH_USER_MODEL = 'read.MyUser'
 
 WSGI_APPLICATION = 'read.wsgi.application'
 
@@ -60,11 +60,15 @@ WSGI_APPLICATION = 'read.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.path.join(BASE_DIR, 'db.postgresql'),
+        'USER': 'mgoldbas',
+        'PASSWORD': 'tootsie',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-
+#'NAME': os.path.join(BASE_DIR, 'db.postgresql'),
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
