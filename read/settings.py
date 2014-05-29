@@ -50,6 +50,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'read.urls'
+AUTH_USER_MODEL = 'read.MyUser'
 
 WSGI_APPLICATION = 'read.wsgi.application'
 
