@@ -10,6 +10,7 @@ SIZE = [('Xsmall', 'Xsmall'),('Small', 'Small'),('Medium', 'Medium'),('Large','L
 class TextForm(forms.Form):
 	name = forms.CharField()
 	text = forms.CharField(widget=forms.Textarea, label="Add Text")
+	subject = forms.SlugField()
 
 class FileForm(forms.Form):
 	name = forms.CharField()
